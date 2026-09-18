@@ -53,18 +53,8 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 25px -5px rgba(182, 44, 44, 0.15)",
-        "glow-blue": "0 0 25px -5px rgba(12, 103, 145, 0.2)",
         subtle: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
-      },
-      keyframes: {
-        "pulse-dot": {
-          "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.35", transform: "scale(0.85)" },
-        },
-      },
-      animation: {
-        "pulse-dot": "pulse-dot 1.8s ease-in-out infinite",
+        card: "0 4px 20px -2px rgba(0, 0, 0, 0.5)",
       },
       screens: {
         xs: "480px",

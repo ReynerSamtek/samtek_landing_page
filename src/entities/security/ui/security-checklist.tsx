@@ -37,9 +37,9 @@ export function SecurityChecklist() {
         return (
           <div
             key={idx}
-            className="p-5 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-[#0C6791]/50 transition-colors flex items-start gap-4"
+            className="p-5 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-white/20 transition-colors flex items-start gap-4"
           >
-            <div className="w-10 h-10 rounded-lg bg-[#0C6791]/15 border border-[#0C6791]/30 flex items-center justify-center text-[#7ec6ea] shrink-0 mt-0.5">
+            <div className="w-10 h-10 rounded-lg bg-[#141C20] border border-white/10 flex items-center justify-center text-[#E6F1F0] shrink-0 mt-0.5">
               <Icon className="w-5 h-5" />
             </div>
             <div>

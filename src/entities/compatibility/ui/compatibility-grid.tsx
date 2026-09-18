@@ -48,7 +48,7 @@ export function CompatibilityGrid() {
               className="p-5 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-white/20 transition-colors flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-[#B62C2C]/10 border border-[#B62C2C]/30 flex items-center justify-center text-[#B62C2C] mb-3.5">
+                <div className="w-10 h-10 rounded-lg bg-[#141C20] border border-white/10 flex items-center justify-center text-white mb-3.5">
                   <Icon className="w-5 h-5" />
                 </div>
                 <h4 className="text-sm font-bold text-white mb-1.5">
@@ -58,8 +58,9 @@ export function CompatibilityGrid() {
                   {proto.desc}
                 </p>
               </div>
-              <div className="mt-4 text-[11px] font-mono text-emerald-400 font-semibold">
-                TERVERIFIKASI AKTIF ✓
+              <div className="mt-4 flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Kompatibel & Teruji</span>
               </div>
             </div>
           );

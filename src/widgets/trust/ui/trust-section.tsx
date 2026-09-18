@@ -30,7 +30,7 @@ export function TrustSection() {
                 key={i}
                 className="p-5 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-white/20 transition-all flex flex-col items-center justify-center gap-3 text-center group"
               >
-                <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#8B9C9B] group-hover:text-[#B62C2C] group-hover:border-[#B62C2C]/40 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#8B9C9B] group-hover:text-white group-hover:border-white/25 transition-colors">
                   <Icon className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-medium text-[#C2D1D0] leading-snug">

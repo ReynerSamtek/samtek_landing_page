@@ -31,8 +31,8 @@ export function FaqAccordion() {
                 {item.question}
               </span>
               <div
-                className={`w-7 h-7 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-white/70 transition-transform duration-200 shrink-0 ${
-                  isOpen ? "rotate-180 text-[#B62C2C] bg-[#B62C2C]/10 border-[#B62C2C]/30" : ""
+                className={`w-7 h-7 rounded-full bg-[#12191D] border border-white/10 flex items-center justify-center text-white/70 transition-transform duration-200 shrink-0 ${
+                  isOpen ? "rotate-180 text-white bg-[#1A2429] border-white/25" : ""
                 }`}
               >
                 <ChevronDown className="w-4 h-4" />

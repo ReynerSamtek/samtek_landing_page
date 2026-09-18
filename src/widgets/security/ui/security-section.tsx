@@ -24,12 +24,12 @@ export function SecuritySection() {
               className="mb-6"
             />
 
-            <div className="p-5 rounded-xl bg-[#0C6791]/10 border border-[#0C6791]/30 text-xs text-[#C2D1D0] space-y-2">
-              <div className="flex items-center gap-2 font-semibold text-[#7ec6ea]">
-                <Lock className="w-4 h-4" />
+            <div className="p-5 rounded-xl bg-[#0E1519] border border-white/10 text-xs text-[#C2D1D0] space-y-2">
+              <div className="flex items-center gap-2 font-semibold text-white">
+                <Lock className="w-4 h-4 text-[#8B9C9B]" />
                 <span>Prinsip Zero-Trust Architecture</span>
               </div>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-[#8B9C9B]">
                 Samtek tidak mewajibkan port forwarding, tidak membutuhkan akses publik internet, dan dapat beroperasi penuh pada jaringan lokal tertutup (air-gapped intranet).
               </p>
             </div>

@@ -43,10 +43,10 @@ export function CapabilitiesSection() {
               <button
                 key={tab.key}
                 onClick={() => setActiveCategory(tab.key)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer border ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer border ${
                   isActive
-                    ? "bg-[#B62C2C] text-white border-[#B62C2C] shadow-lg shadow-[#B62C2C]/20"
-                    : "bg-[#0D1316] text-[#8B9C9B] border-white/[0.08] hover:border-white/20 hover:text-[#E6F1F0]"
+                    ? "bg-[#B62C2C] text-white border-white/15 shadow-sm"
+                    : "bg-[#12191D] text-[#C2D1D0] border-white/10 hover:border-white/20 hover:bg-[#1A2429] hover:text-white"
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -64,9 +64,9 @@ export function CapabilitiesSection() {
         </div>
 
         {/* Bottom Reassurance Banner */}
-        <div className="mt-10 p-6 rounded-xl bg-gradient-to-r from-[#0C6791]/15 to-[#0D1316] border border-[#0C6791]/30 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0C6791]/20 flex items-center justify-center text-[#7ec6ea] shrink-0">
+        <div className="mt-10 p-6 rounded-xl bg-[#0E1518] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center text-white shrink-0">
               <Layers className="w-5 h-5" />
             </div>
             <div>
@@ -76,7 +76,7 @@ export function CapabilitiesSection() {
           </div>
           <a
             href="#demo"
-            className="text-xs font-semibold px-4 py-2 rounded-lg bg-[#0C6791] text-white hover:bg-[#095375] transition-colors shrink-0"
+            className="text-xs font-semibold px-4 py-2.5 rounded-lg bg-[#192429] hover:bg-[#202D33] text-white border border-white/15 hover:border-white/25 shadow-sm transition-colors shrink-0"
           >
             Konsultasikan Kebutuhan →
           </a>

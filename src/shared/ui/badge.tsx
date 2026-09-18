@@ -18,13 +18,13 @@ export function Badge({
       className={cn(
         "inline-flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full border transition-colors",
         variant === "blue" &&
-          "border-[#0C6791]/40 text-[#7ec6ea] bg-[#0C6791]/15",
+          "border-white/10 text-[#C2D1D0] bg-[#10181C]",
         variant === "red" &&
-          "border-[#B62C2C]/40 text-[#fca5a5] bg-[#B62C2C]/15",
+          "border-white/10 text-[#E6F1F0] bg-[#161214]",
         variant === "muted" &&
-          "border-white/10 text-[#8B9C9B] bg-white/[0.03]",
+          "border-white/10 text-[#8B9C9B] bg-[#0E1417]",
         variant === "success" &&
-          "border-emerald-500/30 text-emerald-400 bg-emerald-500/10",
+          "border-white/10 text-emerald-400 bg-[#0C1714]",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ export function Badge({
       {pulse && (
         <span
           className={cn(
-            "w-1.5 h-1.5 rounded-full inline-block animate-pulse-dot",
+            "w-1.5 h-1.5 rounded-full inline-block",
             variant === "blue" && "bg-[#0C6791]",
             variant === "red" && "bg-[#B62C2C]",
             variant === "muted" && "bg-[#8B9C9B]",

@@ -12,27 +12,29 @@ export function StatusBar() {
   return (
     <aside
       aria-label="System status bar"
-      className="w-full bg-[#0B1012] border-b border-white/[0.08] px-4 sm:px-8 py-1.5 text-xs text-[#8B9C9B] flex items-center justify-between flex-wrap gap-2 z-50"
+      className="w-full bg-[#090E10] border-b border-white/[0.06] text-xs text-[#8B9C9B] z-50 transition-colors"
     >
-      <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
-        <span className="flex items-center gap-1.5 text-[#0C6791] font-medium">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>{siteConfig.systemStatus.version}</span>
-        </span>
-        <span className="hidden sm:inline text-white/20">|</span>
-        <span className="flex items-center gap-2 text-[#E6F1F0]">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-          {siteConfig.systemStatus.statusText}
-        </span>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-2 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 flex-wrap text-[11px] sm:text-xs">
+          <span className="flex items-center gap-1.5 text-[#0C6791] font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+            <span>{siteConfig.systemStatus.version}</span>
+          </span>
+          <span className="text-white/20 hidden sm:inline">•</span>
+          <span className="flex items-center gap-2 text-[#C2D1D0]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            {siteConfig.systemStatus.statusText}
+          </span>
+        </div>
 
-      <button
-        onClick={() => setVisible(false)}
-        className="text-[#8B9C9B] hover:text-white transition-colors p-0.5 ml-auto cursor-pointer"
-        aria-label="Tutup bar status"
-      >
-        <X className="w-3.5 h-3.5" />
-      </button>
+        <button
+          onClick={() => setVisible(false)}
+          className="text-[#8B9C9B] hover:text-white transition-colors p-1 rounded hover:bg-white/[0.05] cursor-pointer"
+          aria-label="Tutup bar status"
+        >
+          <X className="w-3.5 h-3.5" />
+        </button>
+      </div>
     </aside>
   );
 }

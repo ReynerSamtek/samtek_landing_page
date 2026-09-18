@@ -3,25 +3,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B62C2C] disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer rounded-lg",
+  "inline-flex items-center justify-center font-medium whitespace-nowrap transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer rounded-lg shrink-0",
   {
     variants: {
       variant: {
         primary:
-          "bg-[#B62C2C] text-white hover:bg-[#a02626] active:bg-[#8c2121] shadow-lg shadow-[#B62C2C]/20",
+          "bg-[#B62C2C] text-white hover:bg-[#A02424] active:bg-[#8A1E1E] border border-white/15 shadow-[0_1px_2px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.15)] active:scale-[0.99]",
         secondary:
-          "bg-[#0C6791] text-white hover:bg-[#095375] shadow-lg shadow-[#0C6791]/20",
+          "bg-[#1A2327] text-[#E6F1F0] hover:bg-[#222E34] hover:text-white border border-white/15 hover:border-white/25 active:bg-[#141C20] shadow-[0_1px_2px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)] active:scale-[0.99]",
         outline:
-          "border border-white/15 text-[#E6F1F0] hover:bg-white/[0.06] hover:border-white/30",
-        outlineRed:
-          "border border-[#B62C2C]/60 text-[#E6F1F0] hover:bg-[#B62C2C]/10 hover:border-[#B62C2C]",
+          "bg-[#131B1F] text-[#E6F1F0] hover:bg-[#1B262B] hover:text-white border border-white/20 hover:border-white/30 shadow-sm active:scale-[0.99]",
         ghost:
-          "text-[#8B9C9B] hover:text-[#E6F1F0] hover:bg-white/[0.05]",
+          "bg-[#101619] text-[#C2D1D0] hover:text-white hover:bg-[#172126] border border-white/10 hover:border-white/20 active:scale-[0.99]",
       },
       size: {
-        sm: "text-xs px-3 py-1.5 gap-1.5",
-        md: "text-sm px-4 py-2.5 gap-2",
-        lg: "text-base px-6 py-3 gap-2.5 font-semibold",
+        sm: "text-xs px-3.5 py-2 gap-1.5 h-8",
+        md: "text-sm px-4 py-2 gap-2 h-9",
+        lg: "text-sm sm:text-base px-5 py-2.5 sm:py-3 gap-2 h-11",
       },
     },
     defaultVariants: {

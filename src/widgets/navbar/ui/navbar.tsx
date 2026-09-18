@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/shared/config/site";
 import { Button } from "@/shared/ui/button";
 import { Menu, X, MessageSquare, ArrowRight } from "lucide-react";
@@ -9,36 +10,33 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/[0.08] bg-[#06090A]/90 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 w-full border-b border-white/[0.08] bg-[#06090A]/95 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a
           href="#"
-          className="flex items-center gap-2 group select-none"
+          className="flex items-center gap-2.5 shrink-0 select-none group"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#B62C2C] flex items-center justify-center font-bold text-white text-base shadow-md shadow-[#B62C2C]/30">
-            S
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5 font-bold text-lg tracking-tight text-white">
-              <span>{siteConfig.name}</span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#0C6791]/20 text-[#7ec6ea] border border-[#0C6791]/40">
-                VMS
-              </span>
-            </div>
-            <div className="text-[10px] text-[#8B9C9B] -mt-1 hidden sm:block">
-              Edge AI Video Management
-            </div>
-          </div>
+          <Image
+            src="/picture/512x512.png"
+            alt="SAMTEK"
+            width={32}
+            height={32}
+            className="w-8 h-8 rounded-lg object-contain"
+            priority
+          />
+          <span className="font-bold text-base sm:text-lg text-white tracking-tight">
+            SAMTEK
+          </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs sm:text-sm font-medium">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium">
           {siteConfig.navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[#8B9C9B] hover:text-white transition-colors"
+              className="text-[#8B9C9B] hover:text-white transition-colors whitespace-nowrap px-1 py-1"
             >
               {link.label}
             </a>
@@ -46,20 +44,19 @@ export function Navbar() {
         </nav>
 
         {/* Desktop Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2.5 shrink-0">
           <a
             href={siteConfig.company.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg text-[#8B9C9B] hover:text-white hover:bg-white/[0.04] transition-colors"
+            className="hidden xl:flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg text-[#8B9C9B] hover:text-white hover:bg-white/[0.04] transition-colors whitespace-nowrap"
           >
             <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="hidden md:inline">WhatsApp:</span>
-            <span>{siteConfig.company.phone}</span>
+            <span>0877-4448-8999</span>
           </a>
 
-          <Button asChild variant="primary" size="sm" className="font-semibold shadow-md">
-            <a href="#demo" className="flex items-center gap-1.5">
+          <Button asChild variant="primary" size="md" className="font-medium">
+            <a href="#demo" className="flex items-center gap-1.5 whitespace-nowrap">
               <span>Jadwalkan Demo</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
@@ -78,7 +75,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/[0.08] bg-[#0B1012] px-6 py-6 flex flex-col gap-4 text-sm">
+        <div className="lg:hidden border-t border-white/[0.08] bg-[#0B1012] px-6 py-5 flex flex-col gap-3.5 text-sm">
           {siteConfig.navLinks.map((link) => (
             <a
               key={link.href}
@@ -90,20 +87,20 @@ export function Navbar() {
             </a>
           ))}
 
-          <div className="pt-2 flex flex-col gap-3">
+          <div className="pt-2 flex flex-col gap-2.5">
             <a
               href={siteConfig.company.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-[#121E1A] text-emerald-400 border border-white/10 text-xs font-medium"
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Chat WhatsApp: {siteConfig.company.phone}</span>
+              <span>WhatsApp: {siteConfig.company.phone}</span>
             </a>
 
-            <Button asChild variant="primary" size="md" className="w-full font-semibold">
+            <Button asChild variant="primary" size="md" className="w-full">
               <a href="#demo" onClick={() => setMobileMenuOpen(false)}>
-                Jadwalkan Live Demo →
+                Jadwalkan Live Demo
               </a>
             </Button>
           </div>

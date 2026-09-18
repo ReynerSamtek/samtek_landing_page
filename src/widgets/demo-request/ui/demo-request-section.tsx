@@ -46,28 +46,28 @@ export function DemoRequestSection() {
                 href={siteConfig.company.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-emerald-500/50 flex items-center justify-between transition-colors group"
+                className="p-4 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-white/20 flex items-center justify-between transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-[#121E1A] border border-white/10 text-emerald-400 flex items-center justify-center">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#8B9C9B]">WhatsApp Business (Fast Response)</div>
+                    <div className="text-xs text-[#8B9C9B]">WhatsApp Business (Respon Cepat)</div>
                     <div className="text-sm font-semibold text-white font-mono">{siteConfig.company.phone}</div>
                   </div>
                 </div>
-                <span className="text-xs text-emerald-400 font-semibold group-hover:translate-x-0.5 transition-transform">
+                <span className="text-xs text-[#C2D1D0] group-hover:text-white font-medium group-hover:translate-x-0.5 transition-all">
                   Chat Sekarang →
                 </span>
               </a>
 
               <a
                 href={`mailto:${siteConfig.company.email}`}
-                className="p-4 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-[#B62C2C]/50 flex items-center justify-between transition-colors group"
+                className="p-4 rounded-xl bg-[#0D1316] border border-white/[0.08] hover:border-white/20 flex items-center justify-between transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#B62C2C]/15 text-[#fca5a5] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-[#181316] border border-white/10 text-white flex items-center justify-center">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export function DemoRequestSection() {
                     <div className="text-sm font-semibold text-white font-mono">{siteConfig.company.email}</div>
                   </div>
                 </div>
-                <span className="text-xs text-[#fca5a5] font-semibold group-hover:translate-x-0.5 transition-transform">
+                <span className="text-xs text-[#C2D1D0] group-hover:text-white font-medium group-hover:translate-x-0.5 transition-all">
                   Kirim Email →
                 </span>
               </a>

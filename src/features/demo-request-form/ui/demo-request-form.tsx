@@ -49,11 +49,11 @@ export function DemoRequestForm() {
 
   if (submitted) {
     return (
-      <div className="p-8 sm:p-10 rounded-2xl bg-[#0D1316] border border-emerald-500/40 shadow-2xl flex flex-col gap-4 text-center items-center">
-        <div className="w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
+      <div className="p-8 sm:p-10 rounded-2xl bg-[#0D1316] border border-white/15 shadow-2xl flex flex-col gap-4 text-center items-center">
+        <div className="w-14 h-14 rounded-full bg-[#121E1A] border border-white/10 flex items-center justify-center text-emerald-400 mb-2">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <div className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+        <div className="text-xs font-medium px-3 py-1 rounded-full bg-[#121E1A] text-emerald-400 border border-white/10">
           Permintaan Demo Berhasil Dikirim
         </div>
         <h3 className="text-2xl font-bold text-white">
@@ -68,7 +68,7 @@ export function DemoRequestForm() {
         <div className="mt-4 pt-6 border-t border-white/[0.08] w-full flex justify-center">
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             size="sm"
             onClick={handleReset}
             className="flex items-center gap-2 text-xs"
@@ -104,7 +104,7 @@ export function DemoRequestForm() {
               onChange={handleChange}
               placeholder="Contoh: Bpk. Bambang Sutrisno"
               required
-              className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
+              className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
           </div>
 
@@ -118,7 +118,7 @@ export function DemoRequestForm() {
               onChange={handleChange}
               placeholder="Contoh: PT Industri Maju Abadi"
               required
-              className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
+              className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -135,7 +135,7 @@ export function DemoRequestForm() {
               onChange={handleChange}
               placeholder="nama@perusahaan.com"
               required
-              className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
+              className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
           </div>
 
@@ -150,7 +150,7 @@ export function DemoRequestForm() {
               onChange={handleChange}
               placeholder="081234567890"
               required
-              className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
+              className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -163,7 +163,7 @@ export function DemoRequestForm() {
             name="cameraCount"
             value={formData.cameraCount}
             onChange={handleChange}
-            className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white focus:outline-none transition-colors"
+            className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white focus:outline-none transition-colors"
           >
             <option value="<10">1 – 10 Titik Kamera (Skala Kecil / Ritel)</option>
             <option value="10-30">10 – 30 Titik Kamera (Gedung Kantor / Gudang)</option>
@@ -182,7 +182,7 @@ export function DemoRequestForm() {
             onChange={handleChange}
             placeholder="Misal: Ingin deteksi helm K3 dan orang tidak berwenang di area gudang bahan peledak..."
             rows={3}
-            className="w-full bg-[#06090A] border border-white/15 focus:border-[#B62C2C] rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors resize-y"
+            className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors resize-y"
           />
         </div>
 

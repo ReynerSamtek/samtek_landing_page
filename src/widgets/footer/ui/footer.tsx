@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { siteConfig } from "@/shared/config/site";
 import { MessageSquare, Mail, MapPin, Shield } from "lucide-react";
 
@@ -10,11 +11,15 @@ export function Footer() {
           {/* Company Brand & Address */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#B62C2C] flex items-center justify-center font-bold text-white text-base">
-                S
-              </div>
+              <Image
+                src="/picture/512x512.png"
+                alt="SAMTEK"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg object-contain"
+              />
               <span className="font-bold text-xl text-white tracking-tight">
-                {siteConfig.name} <span className="text-[#0C6791] text-xs font-mono">VMS</span>
+                SAMTEK
               </span>
             </div>
 

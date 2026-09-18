@@ -18,7 +18,7 @@ export function StepCard({ step }: StepCardProps) {
           <span className="text-2xl sm:text-3xl font-extrabold text-[#B62C2C] font-mono">
             {step.num}
           </span>
-          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#0C6791]/20 text-[#7ec6ea] border border-[#0C6791]/30">
+          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#121A1E] text-[#C2D1D0] border border-white/10">
             {step.badge}
           </span>
         </div>

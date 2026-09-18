@@ -14,7 +14,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({
   badge,
-  badgeVariant = "red",
+  badgeVariant = "muted",
   command,
   title,
   description,

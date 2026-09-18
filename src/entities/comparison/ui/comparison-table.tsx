@@ -14,7 +14,7 @@ export function ComparisonTable({ rows }: ComparisonTableProps) {
         <div className="p-4 sm:p-5 text-[#8B9C9B] uppercase tracking-wider">
           Faktor Kritis
         </div>
-        <div className="p-4 sm:p-5 text-white bg-[#B62C2C]/10 border-x border-[#B62C2C]/30 flex items-center gap-2">
+        <div className="p-4 sm:p-5 text-white bg-[#141C21] border-x border-white/10 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#B62C2C]" />
           <span>SAMTEK (Edge On-Premise)</span>
         </div>
@@ -35,7 +35,7 @@ export function ComparisonTable({ rows }: ComparisonTableProps) {
           </div>
 
           {/* Samtek On-Prem Advantage */}
-          <div className="p-4 sm:p-5 bg-[#B62C2C]/5 border-x border-[#B62C2C]/20 text-[#E6F1F0] flex items-start gap-2.5 font-medium leading-relaxed">
+          <div className="p-4 sm:p-5 bg-[#0F161A] border-x border-white/10 text-[#E6F1F0] flex items-start gap-2.5 font-medium leading-relaxed">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
             <span>{row.onprem}</span>
           </div>

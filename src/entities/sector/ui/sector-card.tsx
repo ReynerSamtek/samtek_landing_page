@@ -12,7 +12,7 @@ export function SectorCard({ sector }: SectorCardProps) {
       <div>
         {/* Category Header */}
         <div className="flex items-center justify-between gap-2 mb-4">
-          <span className="text-xs font-semibold px-2.5 py-1 rounded bg-[#B62C2C]/15 text-[#fca5a5] border border-[#B62C2C]/30">
+          <span className="text-xs font-medium px-2.5 py-1 rounded bg-[#131B1F] text-[#C2D1D0] border border-white/10">
             {sector.category}
           </span>
           <span className="text-xs font-mono text-[#8B9C9B]">
@@ -60,7 +60,7 @@ export function SectorCard({ sector }: SectorCardProps) {
       <div className="mt-6 pt-4 border-t border-white/[0.06]">
         <a
           href="#demo"
-          className="text-xs font-semibold text-white/70 hover:text-white flex items-center justify-between group-hover:text-[#7ec6ea] transition-colors"
+          className="flex items-center justify-between w-full px-3.5 py-2 rounded-lg bg-[#12191D] hover:bg-[#1A2429] text-[#E6F1F0] hover:text-white border border-white/10 hover:border-white/20 text-xs font-medium transition-colors"
         >
           <span>Diskusikan Solusi Sektor Ini</span>
           <span>→</span>
