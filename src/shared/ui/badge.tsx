@@ -40,7 +40,7 @@ export function Badge({
           )}
         />
       )}
-      <span>{children}</span>
+      <span className="flex">{children}</span>
     </div>
   );
 }
