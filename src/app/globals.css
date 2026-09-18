@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #06090a;
+  --surface: #0b1012;
+  --surface-card: #0d1316;
+  --text-primary: #e6f1f0;
+  --text-muted: #8b9c9b;
+  --accent-red: #b62c2c;
+  --accent-blue: #0c6791;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: #06090a;
+  color: #e6f1f0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #06090a;
+  color: #e6f1f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06090a;
+}
+::-webkit-scrollbar-thumb {
+  background: #172227;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b62c2c;
+}
+
+/* Subtle corporate ambient background */
+.bg-corporate-ambient {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(182, 44, 44, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 100% 40%, rgba(12, 103, 145, 0.05) 0%, transparent 50%),
+    linear-gradient(to bottom, #06090a 0%, #06090a 100%);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Elegant card accents */
+.card-border-gradient {
+  position: relative;
+  background: linear-gradient(180deg, #0d1316 0%, #090e10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.card-border-gradient:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
