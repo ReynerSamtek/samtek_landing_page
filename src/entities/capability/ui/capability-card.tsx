@@ -77,28 +77,13 @@ export function CapabilityCard({ capability }: CapabilityCardProps) {
         </div>
 
         <h3 className="text-sm sm:text-base font-semibold text-[#E6F1F0] group-hover:text-white transition-colors mb-1">
-          {capability.nameId}
-        </h3>
-        <p className="text-xs text-[#8B9C9B] font-mono mb-2 text-white/50">
           {capability.name}
-        </p>
+        </h3>
 
         <p className="text-xs text-[#8B9C9B] leading-relaxed">
-          {capability.descId}
+          {capability.desc}
         </p>
       </div>
-
-      {capability.featured && (
-        <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px]">
-          <span className="text-emerald-400 font-medium flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            Modul Populer
-          </span>
-          <span className="text-xs text-[#8B9C9B] group-hover:text-white transition-colors">
-            Siap Pakai →
-          </span>
-        </div>
-      )}
     </div>
   );
 }

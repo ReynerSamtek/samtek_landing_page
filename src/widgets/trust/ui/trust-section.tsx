@@ -5,38 +5,38 @@ import { Building2, Factory, Landmark, Truck, ShoppingBag, Shield } from "lucide
 export function TrustSection() {
   const deployments = [
     {
-      title: "Kawasan Industri & Pabrik",
-      desc: "PPE checks and zone safety enforced on every line, every shift.",
+      title: "Manufacturing & Industrial Lines",
+      desc: "Automated PPE checks and zone safety enforced on every line, every shift.",
       icon: Factory,
       image: "/picture/places/pabrik.jpg",
     },
     {
-      title: "Hub Logistik & Pergudangan",
-      desc: "Count pallets, track forklifts, and watch every dock in real time.",
+      title: "Logistics Hubs & Warehousing",
+      desc: "Count pallets, monitor forklifts, and inspect loading docks in real time.",
       icon: Truck,
       image: "/picture/places/warehouse.jpg",
     },
     {
-      title: "Pusat Ritel & Mall",
-      desc: "Catch shrinkage and count footfall without adding a single guard.",
+      title: "Retail Stores & Shopping Malls",
+      desc: "Mitigate inventory shrinkage and count footfall without adding guard headcount.",
       icon: ShoppingBag,
       image: "/picture/places/mall.jpg",
     },
     {
-      title: "Fasilitas Publik & Gedung",
-      desc: "Helmets, vests, and site access — verified automatically, all day.",
+      title: "Commercial Towers & Public Sites",
+      desc: "Helmets, high-vis vests, and site access verified automatically all day.",
       icon: Building2,
       image: "/picture/places/gedung.jpg",
     },
     {
-      title: "Objek Vital Nasional (Obvitnas)",
-      desc: "Intrusion alerts and PPE compliance in the zones that can't afford a miss.",
+      title: "Critical Infrastructure & Energy",
+      desc: "Intrusion perimeter alerts and PPE compliance in zones that cannot afford a miss.",
       icon: Shield,
       image: "/picture/places/objek vital nasional.jpg",
     },
     {
-      title: "Perbankan & Perkantoran",
-      desc: "Face-verified access at every entrance — no badge, no bottleneck.",
+      title: "Banking & Corporate Offices",
+      desc: "Facial verification at access portals — no badges, no bottleneck queues.",
       icon: Landmark,
       image: "/picture/places/bank.jpg",
     },
@@ -60,9 +60,9 @@ export function TrustSection() {
       <div className="max-w-7xl mx-auto text-center">
         <SectionHeader
           align="center"
-          badge="Implementasi & Skalabilitas"
-          title="Teruji untuk Pengawasan Skala Enterprise"
-          description="SAMTEK SmartBox adapts to diverse environments with specific AI models and detection configurations."
+          badge="Deployment & Scalability"
+          title="Battle-Tested for Enterprise-Scale Surveillance"
+          description="SAMTEK SmartBox adapts to diverse operational environments with specialized AI vision models and detection rules."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
@@ -120,7 +120,7 @@ export function TrustSection() {
               Trusted by Industry Leaders
             </h3>
             <p className="text-xs sm:text-sm text-[#8B9C9B] leading-relaxed">
-              Kami berfokus membangun sistem yang memberikan hasil nyata. Mulai dari integrasi tanpa hambatan hingga pengawasan bertenaga AI yang disesuaikan, memastikan kebutuhan keamanan fasilitas Anda terpenuhi dengan presisi dan inovasi.
+              We focus on building systems that deliver tangible ROI. From frictionless on-premise integration to custom edge AI models, ensuring your facility&apos;s security and operational oversight with precision.
             </p>
           </div>
 

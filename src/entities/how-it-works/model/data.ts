@@ -1,32 +1,32 @@
 import { StepItem } from "./types";
 
-export const howItWorksSteps = [
+export const howItWorksSteps: StepItem[] = [
   {
     num: "01",
-    step: "Langkah 1",
-    title: "Hubungkan Kamera yang Ada",
-    desc: "Sambungkan CCTV analog (via encoder) atau IP Camera apapun via protokol RTSP/ONVIF. Tanpa perlu beli kamera baru.",
+    step: "Step 1",
+    title: "Connect Existing Cameras",
+    desc: "Hook up any analog cameras (via encoder) or IP cameras using RTSP or ONVIF protocols. No camera replacement needed.",
     badge: "Plug & Play",
   },
   {
     num: "02",
-    step: "Langkah 2",
-    title: "Pemrosesan Lokal di Edge Box",
-    desc: "Video dianalisis secara mandiri di perangkat server lokal Samtek. Bandwidth internet Anda tidak akan terpakai sama sekali.",
+    step: "Step 2",
+    title: "Local Edge Computing",
+    desc: "Video streams are processed entirely on SAMTEK's local on-premise edge hardware. Zero internet bandwidth consumed.",
     badge: "100% On-Premise",
   },
   {
     num: "03",
-    step: "Langkah 3",
-    title: "Deteksi Otomatis Berbasis AI",
-    desc: "Pilih modul AI yang ingin diaktifkan. Algoritma langsung mengenali wajah, plat nomor, rompi APD, atau penyusup secara instan.",
-    badge: "Latensi < 10ms",
+    step: "Step 3",
+    title: "Automated AI Detection",
+    desc: "Activate specific vision models per stream: instant recognition of faces, license plates, PPE safety gear, or intruders.",
+    badge: "Sub-10ms Latency",
   },
   {
     num: "04",
-    step: "Langkah 4",
-    title: "Notifikasi Cepat & Integrasi Aksi",
-    desc: "Terima peringatan seketika via WhatsApp, email, buka palang parkir otomatis, atau nyalakan sirine keamanan gedung.",
+    step: "Step 4",
+    title: "Instant Alerts & Trigger Actions",
+    desc: "Receive real-time notifications via WhatsApp, email, webhook, automatic boom-gate triggers, or facility sirens.",
     badge: "Real-Time Action",
   },
 ];

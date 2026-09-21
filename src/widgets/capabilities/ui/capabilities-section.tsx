@@ -11,11 +11,11 @@ export function CapabilitiesSection() {
   const [activeCategory, setActiveCategory] = useState<CapabilityCategory | "all">("all");
 
   const categories = [
-    { key: "all", label: "Semua Modul (24)", icon: Layers },
-    { key: "security", label: "Keamanan & Akses", icon: ShieldCheck },
-    { key: "safety", label: "K3 & Pabrik", icon: HardHat },
-    { key: "business", label: "Ritel & Komersial", icon: Store },
-    { key: "traffic", label: "Lalu Lintas & Parkir", icon: Car },
+    { key: "all", label: "All Modules (24)", icon: Layers },
+    { key: "security", label: "Security & Access", icon: ShieldCheck },
+    { key: "safety", label: "Industrial & Safety", icon: HardHat },
+    { key: "business", label: "Retail & Commercial", icon: Store },
+    { key: "traffic", label: "Traffic & Parking", icon: Car },
   ] as const;
 
   const filtered = activeCategory === "all"
@@ -27,9 +27,9 @@ export function CapabilitiesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <SectionHeader
-            badge="Katalog Kemampuan AI"
-            title="24+ Solusi AI Vision Siap Pakai untuk Segala Kebutuhan"
-            description="Setiap modul AI dapat diaktifkan atau dinonaktifkan per kamera sesuai kebutuhan spesifik titik lokasi Anda. Cukup sambungkan kamera yang ada, sistem langsung bekerja."
+            badge="AI Capabilities Catalog"
+            title="24+ Specialized Computer Vision Modules"
+            description="Each AI module can be independently enabled or customized per camera stream according to specific operational needs. Connect your existing cameras, and the system immediately goes to work."
             className="mb-0"
           />
         </div>
@@ -70,15 +70,15 @@ export function CapabilitiesSection() {
               <Layers className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-white">Butuh algoritma custom untuk industri Anda?</h4>
-              <p className="text-xs text-[#8B9C9B]">Tim R&D Samtek dapat melatih model AI baru sesuai skenario unik operasional Anda.</p>
+              <h4 className="text-sm font-semibold text-white">Need a bespoke AI model for your industry?</h4>
+              <p className="text-xs text-[#8B9C9B]">SAMTEK&apos;s R&D engineering team can train custom computer vision models tailored to your exact facility SOP.</p>
             </div>
           </div>
           <a
-            href="#demo"
+            href="/#demo"
             className="text-xs font-semibold px-4 py-2.5 rounded-lg bg-[#192429] hover:bg-[#202D33] text-white border border-white/15 hover:border-white/25 shadow-sm transition-colors shrink-0"
           >
-            Konsultasikan Kebutuhan →
+            Request Custom Assessment →
           </a>
         </div>
       </div>

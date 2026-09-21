@@ -10,9 +10,9 @@ export function CompatibilitySection() {
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          badge="Integrasi Tanpa Hambatan"
-          title="Bekerja Sempurna dengan CCTV yang Sudah Anda Miliki"
-          description="Hindari pemborosan budget untuk peremajaan kamera baru. SAMTEK langsung mengenali video stream dari brand apapun yang saat ini sedang aktif di gedung Anda."
+          badge="Seamless Integration"
+          title="Works Flawlessly with Your Existing Cameras"
+          description="Avoid wasteful capital expenditures on hardware overhauls. SAMTEK ingests live video streams from any brand currently installed across your facilities."
         />
 
         <CompatibilityGrid />

@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar } from "@/widgets/status-bar/ui/status-bar";
 import { Navbar } from "@/widgets/navbar/ui/navbar";
 import { Hero } from "@/widgets/hero/ui/hero";
 import { CapabilitiesSection } from "@/widgets/capabilities/ui/capabilities-section";
@@ -16,7 +15,6 @@ import { Footer } from "@/widgets/footer/ui/footer";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-[#06090A] text-[#E6F1F0] selection:bg-[#B62C2C]/30 selection:text-white">
-      <StatusBar />
       <Navbar />
       <Hero />
       <CapabilitiesSection />
