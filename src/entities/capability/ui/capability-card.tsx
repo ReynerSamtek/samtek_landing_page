@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { AiCapability } from "../model/types";
 import {
   ScanFace,
@@ -26,6 +27,7 @@ import {
   DoorClosed,
   MapPin,
   Camera,
+  ArrowRight,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -65,10 +67,13 @@ export function CapabilityCard({ capability }: CapabilityCardProps) {
     : Camera;
 
   return (
-    <div className="group relative bg-[#0D1316] border border-white/[0.08] hover:border-white/20 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 flex flex-col justify-between">
+    <Link
+      href={`/ai-models/${capability.slug}`}
+      className="group relative bg-[#0D1316] border border-white/[0.08] hover:border-white/25 hover:bg-[#11191D] rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 flex flex-col justify-between cursor-pointer"
+    >
       <div>
         <div className="flex items-start justify-between mb-3.5">
-          <div className="w-9 h-9 rounded-lg bg-[#141C20] border border-white/10 flex items-center justify-center text-[#E6F1F0] group-hover:border-white/25 transition-colors">
+          <div className="w-9 h-9 rounded-lg bg-[#141C20] border border-white/10 flex items-center justify-center text-[#E6F1F0] group-hover:border-white/30 group-hover:text-white transition-colors">
             <IconComponent className="w-5 h-5 stroke-[1.8]" />
           </div>
           <span className="text-[11px] font-mono text-[#8B9C9B] px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">
@@ -80,10 +85,15 @@ export function CapabilityCard({ capability }: CapabilityCardProps) {
           {capability.name}
         </h3>
 
-        <p className="text-xs text-[#8B9C9B] leading-relaxed">
+        <p className="text-xs text-[#8B9C9B] group-hover:text-[#A4B5B4] leading-relaxed line-clamp-2">
           {capability.desc}
         </p>
       </div>
-    </div>
+
+      <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between text-xs text-[#8B9C9B] group-hover:text-white transition-colors">
+        <span className="text-[11px] font-medium tracking-wide">Explore Live Feed</span>
+        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+      </div>
+    </Link>
   );
 }

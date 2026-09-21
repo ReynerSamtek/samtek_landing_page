@@ -80,12 +80,17 @@ export function DemoRequestSection() {
                 </span>
               </a>
 
-              <div className="p-4 rounded-xl bg-[#0D1316]/50 border border-white/[0.05] flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#8B9C9B] shrink-0 mt-0.5" />
-                <div className="text-xs text-[#8B9C9B] leading-relaxed">
+              <a
+                href={siteConfig.company.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-[#0D1316]/50 hover:bg-[#0D1316] border border-white/[0.05] hover:border-white/15 flex items-start gap-3 transition-colors group"
+              >
+                <MapPin className="w-4 h-4 text-[#8B9C9B] group-hover:text-[#B62C2C] shrink-0 mt-0.5 transition-colors" />
+                <div className="text-xs text-[#8B9C9B] group-hover:text-[#E6F1F0] leading-relaxed transition-colors">
                   <strong className="text-white font-medium">Headquarters:</strong> {siteConfig.company.address}
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

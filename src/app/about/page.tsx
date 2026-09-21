@@ -248,11 +248,6 @@ export default function AboutPage() {
                         {ind.desc}
                       </p>
                     </div>
-
-                    <div className="mt-6 pt-4 border-t border-white/[0.04] flex items-center gap-1.5 text-xs font-medium text-[#0C6791] group-hover:text-[#38bdf8] transition-colors">
-                      <span>View implementation</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
                   </div>
                 );
               })}

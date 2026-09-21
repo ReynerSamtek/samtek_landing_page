@@ -11,6 +11,12 @@ export const siteConfig = {
     whatsappUrl: "https://wa.me/6287744488999",
     address:
       "Jl. Bintara Jaya VIII, RT.008/RW.009, Bintara Jaya, West Bekasi, Bekasi City, West Java 17136, Indonesia",
+    mapsUrl:
+      "https://maps.app.goo.gl/NhwhWBz2ceZ3WK9m8",
+    linkedinUrl:
+      "https://www.linkedin.com/company/pt-safanah-alvan-maksima",
+    instagramUrl:
+      "https://www.instagram.com/samteknologi_id/?hl=en",
   },
   navLinks: [
     { label: "AI Capabilities", href: "/#fitur" },
