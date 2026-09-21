@@ -3,14 +3,46 @@ import { CheckCircle2, Cpu, Video, Network } from "lucide-react";
 
 export function CompatibilityGrid() {
   const brands = [
-    { name: "HIKVISION", desc: "IP Cam & NVR" },
-    { name: "DAHUA", desc: "IP Cam & XVR" },
-    { name: "AXIS", desc: "Enterprise Stream" },
-    { name: "UNIVIEW", desc: "Uniview Series" },
-    { name: "HANWHA", desc: "Wisenet Series" },
-    { name: "BOSCH", desc: "Security Series" },
-    { name: "CP PLUS", desc: "Indigo Series" },
-    { name: "TIANDY", desc: "Starlight IP" },
+    {
+      name: "HIKVISION",
+      desc: "IP Cam & NVR",
+      logo: "/picture/brands/hikvision.png",
+    },
+    {
+      name: "DAHUA",
+      desc: "IP Cam & XVR",
+      logo: "/picture/brands/dahua.svg",
+    },
+    {
+      name: "AXIS",
+      desc: "Enterprise Stream",
+      logo: "/picture/brands/axis.png",
+    },
+    {
+      name: "UNIVIEW",
+      desc: "Uniview Series",
+      logo: "/picture/brands/uniview.png",
+    },
+    {
+      name: "HANWHA",
+      desc: "Wisenet Series",
+      logo: "/picture/brands/hanwha.png",
+    },
+    {
+      name: "BOSCH",
+      desc: "Security Series",
+      logo: "/picture/brands/bosch.png",
+    },
+    {
+      name: "CP PLUS",
+      desc: "Indigo Series",
+      logo: "/picture/brands/cpplus.png",
+    },
+    {
+      name: "TIANDY",
+      desc: "Starlight IP",
+      logo: "/picture/brands/tiandy.png",
+    },
   ];
 
   const protocols = [
@@ -76,12 +108,19 @@ export function CompatibilityGrid() {
           {brands.map((brand, i) => (
             <div
               key={i}
-              className="p-4 rounded-xl bg-[#0B1012] border border-white/[0.08] hover:border-white/20 text-center transition-colors"
+              title={`${brand.name} · ${brand.desc}`}
+              className="group relative p-2.5 rounded-xl bg-[#0B1012] border border-white/[0.08] hover:border-white/20 hover:bg-[#10171A] text-center transition-all duration-200 flex flex-col items-center justify-center min-h-[96px]"
             >
-              <div className="text-xs font-bold font-mono tracking-wider text-white">
-                {brand.name}
+              <div className="w-full h-11 bg-white rounded-lg px-2.5 py-1.5 flex items-center justify-center shadow-sm transition-transform duration-200 group-hover:scale-[0.96]">
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="max-h-7 max-w-full object-contain"
+                  loading="lazy"
+                />
               </div>
-              <div className="text-[10px] text-[#8B9C9B] mt-0.5">
+
+              <div className="mt-1.5 text-[10px] text-[#C2D1D0] font-medium leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-200 truncate w-full px-1">
                 {brand.desc}
               </div>
             </div>
