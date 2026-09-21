@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+// @ts-expect-error Next.js processes global CSS imports at build time.
 import "./globals.css";
 import { siteConfig } from "@/shared/config/site";
 
@@ -17,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SAMTEK VMS — Sistem CCTV Berbasis AI On-Premise | Edge Vision",
+  title: "SAMTEK VMS — Landing Page",
   description:
     "Ubah CCTV yang sudah ada menjadi sistem AI cerdas. Pemrosesan video 100% on-premise tanpa biaya cloud bulanan dan tanpa risiko kebocoran data.",
   keywords: [
@@ -31,6 +32,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.company.name }],
   creator: siteConfig.company.name,
+  icons: {
+    icon: "/picture/512x512.png",
+    shortcut: "/picture/512x512.png",
+    apple: "/picture/512x512.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -5,7 +5,9 @@ import Image from "next/image";
 import { siteConfig } from "@/shared/config/site";
 import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
+import { GlobeLive } from "@/shared/ui/globe";
 import {
+  Play,
   Video,
   LayoutDashboard,
   CheckCircle2,
@@ -13,11 +15,16 @@ import {
 } from "lucide-react";
 
 export function Hero() {
-  const [activeConsoleTab, setActiveConsoleTab] = useState<"demo" | "dashboard">("demo");
+  const [activeConsoleTab, setActiveConsoleTab] = useState<"video" | "demo" | "dashboard">("video");
   return (
     <section className="relative overflow-hidden bg-[#06090A] pt-12 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-8 border-b border-white/[0.08]">
       {/* Subtle ambient light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#B62C2C]/5 blur-[120px] pointer-events-none rounded-full" />
+
+      {/* Background 3D Rotating Globe Animation on Left Side (Enlarged, half visible, 30deg rotated) */}
+      <div className="absolute left-0 -translate-x-1/2 top-[-60px] sm:top-[-100px] lg:top-[-140px] w-[800px] sm:w-[1050px] lg:w-[1250px] aspect-square pointer-events-none opacity-90 select-none z-0 rotate-[-30deg]">
+        <GlobeLive className="w-full h-full" speed={0.002} />
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Hero Header */}
@@ -105,6 +112,18 @@ export function Hero() {
             <div className="flex items-center bg-[#070B0D] p-1 rounded-lg border border-white/10">
               <button
                 type="button"
+                onClick={() => setActiveConsoleTab("video")}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+                  activeConsoleTab === "video"
+                    ? "bg-[#182328] text-white shadow-sm border border-white/15"
+                    : "text-[#8B9C9B] hover:text-white"
+                }`}
+              >
+                <Play className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400/20" />
+                <span>Video Demo</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => setActiveConsoleTab("demo")}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
                   activeConsoleTab === "demo"
@@ -132,14 +151,30 @@ export function Hero() {
             <div className="flex items-center gap-2 text-[#8B9C9B]">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-[11px] text-[#C2D1D0]">
-                {activeConsoleTab === "demo" ? "Multi-Channel Live Feed" : "Telemetry Active"}
+                {activeConsoleTab === "video"
+                  ? "Live Demo Recording"
+                  : activeConsoleTab === "demo"
+                  ? "Multi-Channel Live Feed"
+                  : "Telemetry Active"}
               </span>
             </div>
           </div>
 
-          {/* Screenshot Display Area */}
+          {/* Media Display Area */}
           <div className="relative bg-[#06090A] overflow-hidden">
-            {activeConsoleTab === "demo" ? (
+            {activeConsoleTab === "video" ? (
+              <div className="relative aspect-[16/9] w-full bg-black flex items-center justify-center">
+                <video
+                  src="/video/video_demo.mp4"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            ) : activeConsoleTab === "demo" ? (
               <div className="relative aspect-[16/9] w-full bg-[#090E11]">
                 <Image
                   src="/picture/demo.png"
@@ -168,10 +203,16 @@ export function Hero() {
           <div className="px-4 sm:px-6 py-3 bg-[#0B1013] border-t border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-[#8B9C9B]">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-white">
-                {activeConsoleTab === "demo" ? "Tampilan Antarmuka VMS:" : "Tampilan Dashboard Analitik:"}
+                {activeConsoleTab === "video"
+                  ? "Video Demo Langsung:"
+                  : activeConsoleTab === "demo"
+                  ? "Tampilan Antarmuka VMS:"
+                  : "Tampilan Dashboard Analitik:"}
               </span>
               <span>
-                {activeConsoleTab === "demo"
+                {activeConsoleTab === "video"
+                  ? "Rekaman uji coba langsung analitik AI SAMTEK dalam mendeteksi objek dan aktivitas secara real-time."
+                  : activeConsoleTab === "demo"
                   ? "Streaming multi-channel CCTV dengan inferensi AI Edge & pelacakan objek lokal secara real-time."
                   : "Rekapitulasi kepatuhan APD/K3, tren insiden harian/mingguan, dan visualisasi summary deteksi."}
               </span>

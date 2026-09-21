@@ -15,6 +15,7 @@ export function DemoRequestForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -25,14 +26,30 @@ export function DemoRequestForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/send-demo-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Gagal mengirim formulir");
+      }
+
       setSubmitted(true);
-    }, 400);
+    } catch (err: any) {
+      setErrorMessage(err.message || "Terjadi kesalahan saat mengirim formulir.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -44,6 +61,7 @@ export function DemoRequestForm() {
       cameraCount: "10-30",
       message: "",
     });
+    setErrorMessage(null);
     setSubmitted(false);
   };
 
@@ -185,6 +203,13 @@ export function DemoRequestForm() {
             className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors resize-y"
           />
         </div>
+
+        {errorMessage && (
+          <div className="p-3 rounded-lg bg-red-950/40 border border-red-500/30 text-red-200 text-xs flex items-center gap-2">
+            <ShieldAlert className="w-4 h-4 text-red-400 shrink-0" />
+            <span>{errorMessage}</span>
+          </div>
+        )}
 
         <Button
           type="submit"
