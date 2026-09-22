@@ -206,18 +206,19 @@ export function Navbar() {
             About
           </Link>
 
-          {/* Contact Popover Menu */}
-          <div className="relative" ref={contactRef}>
-            <button
-              onClick={() => setContactDropdownOpen(!contactDropdownOpen)}
-              className="flex items-center gap-1.5 text-[#8B9C9B] hover:text-white transition-colors whitespace-nowrap cursor-pointer"
+          {/* Contact with Hover Dropdown */}
+          <div className="relative group/contact py-5">
+            <a
+              href="/#contact"
+              className="flex items-center gap-1 text-[#8B9C9B] group-hover/contact:text-white transition-colors whitespace-nowrap cursor-pointer"
             >
               <span>Contact</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${contactDropdownOpen ? "rotate-180 text-white" : ""}`} />
-            </button>
+              <ChevronDown className="w-3.5 h-3.5 text-[#8B9C9B] group-hover/contact:text-white transition-transform group-hover/contact:rotate-180" />
+            </a>
 
-            {contactDropdownOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-xl bg-[#0D1418] border border-white/15 p-3.5 shadow-2xl shadow-black/80 flex flex-col gap-2.5 z-50 animate-in fade-in zoom-in-95 duration-150">
+            {/* Dropdown Menu */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 pt-2 opacity-0 pointer-events-none group-hover/contact:opacity-100 group-hover/contact:pointer-events-auto transition-all duration-150 z-50">
+              <div className="rounded-xl bg-[#0D1418] border border-white/15 p-3.5 shadow-2xl shadow-black/80 flex flex-col gap-2.5">
                 <div className="text-[11px] font-mono uppercase text-[#8B9C9B] px-1 pb-1 border-b border-white/[0.08]">
                   Get In Touch
                 </div>
@@ -258,13 +259,12 @@ export function Navbar() {
 
                 <a
                   href="/#contact"
-                  onClick={() => setContactDropdownOpen(false)}
                   className="text-[11px] text-center text-[#8B9C9B] hover:text-white pt-1 transition-colors"
                 >
                   View full address & maps →
                 </a>
               </div>
-            )}
+            </div>
           </div>
         </nav>
 

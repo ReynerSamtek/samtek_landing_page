@@ -96,15 +96,18 @@ export function Footer() {
             <div>
               <PrivacyPolicyModal htmlContent={privacyHtml} />
             </div>
-            <div>
-              <LegalModal
-                buttonLabel="Terms & Conditions"
-                modalTitle="Terms & Conditions"
-                modalSubtitle="PT Safanah Alvan Maksima · Edge VMS Service & License Agreement"
-                htmlContent={termsHtml}
-                icon="file"
-              />
-            </div>
+            {/* Terms & Conditions temporarily hidden per request */}
+            {false && (
+              <div>
+                <LegalModal
+                  buttonLabel="Terms & Conditions"
+                  modalTitle="Terms & Conditions"
+                  modalSubtitle="PT Safanah Alvan Maksima · Edge VMS Service & License Agreement"
+                  htmlContent={termsHtml}
+                  icon="file"
+                />
+              </div>
+            )}
             <div className="pt-2 border-t border-white/[0.06] space-y-2">
               <div className="text-[11px] font-medium text-white/70">Connect With Us:</div>
               <div>
@@ -141,16 +144,18 @@ export function Footer() {
             <div className="font-semibold uppercase tracking-wider text-white mb-3">
               Navigation
             </div>
-            {siteConfig.navLinks.map((link) => (
-              <div key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-[#8B9C9B] hover:text-white transition-colors"
-                >
-                  {link.label}
-                </a>
-              </div>
-            ))}
+            {siteConfig.navLinks
+              .filter((link) => link.label !== "About")
+              .map((link) => (
+                <div key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-[#8B9C9B] hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </div>
+              ))}
             <div className="pt-2">
               <a
                 href="/#demo"
@@ -168,14 +173,19 @@ export function Footer() {
             <span>© 2026 {siteConfig.company.name}. All Rights Reserved.</span>
             <span className="text-white/20">|</span>
             <PrivacyPolicyModal htmlContent={privacyHtml} />
-            <span className="text-white/20">|</span>
-            <LegalModal
-              buttonLabel="Terms & Conditions"
-              modalTitle="Terms & Conditions"
-              modalSubtitle="PT Safanah Alvan Maksima · Edge VMS Service & License Agreement"
-              htmlContent={termsHtml}
-              icon="file"
-            />
+            {/* Terms & Conditions temporarily hidden per request */}
+            {false && (
+              <>
+                <span className="text-white/20">|</span>
+                <LegalModal
+                  buttonLabel="Terms & Conditions"
+                  modalTitle="Terms & Conditions"
+                  modalSubtitle="PT Safanah Alvan Maksima · Edge VMS Service & License Agreement"
+                  htmlContent={termsHtml}
+                  icon="file"
+                />
+              </>
+            )}
           </div>
         </div>
       </div>
