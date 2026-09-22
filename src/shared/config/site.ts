@@ -19,13 +19,10 @@ export const siteConfig = {
       "https://www.instagram.com/samteknologi_id/?hl=en",
   },
   navLinks: [
-    { label: "AI Capabilities", href: "/#fitur" },
-    { label: "How It Works", href: "/#cara-kerja" },
-    { label: "Edge vs Cloud", href: "/#komparasi" },
-    { label: "Industry Solutions", href: "/#industri" },
-    { label: "Compatibility", href: "/#kompatibilitas" },
-    { label: "Security", href: "/#keamanan" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/#contact" },
   ],
   heroStats: [
     { value: "24+", label: "AI Analytics Modules", sublabel: "Face, License Plate, PPE & Safety" },

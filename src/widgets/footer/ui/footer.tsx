@@ -9,7 +9,7 @@ export function Footer() {
   const privacyHtml = getPrivacyPolicyHtml();
   const termsHtml = getTermsConditionsHtml();
   return (
-    <footer className="w-full bg-[#06090A] pt-16 pb-12 px-4 sm:px-8 border-t border-white/[0.08] text-sm">
+    <footer id="contact" className="w-full bg-[#06090A] pt-16 pb-12 px-4 sm:px-8 border-t border-white/[0.08] text-sm">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1.1fr_0.9fr_1fr] gap-10 lg:gap-10 pb-14 border-b border-white/[0.08]">
           {/* Company Brand & Address */}
