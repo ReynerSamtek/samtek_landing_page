@@ -10,7 +10,6 @@ import { ModelWorkflowPipeline } from "@/features/ai-model-feed/ui/model-workflo
 import {
   ArrowLeft,
   CheckCircle2,
-  Camera,
   ShieldCheck,
   ChevronRight,
   ArrowRight,
@@ -124,19 +123,6 @@ export default async function AiModelDetailPage({ params }: PageProps) {
                       </li>
                     ))}
                   </ul>
-                </div>
-              )}
-
-              {/* Hardware Requirements Spec */}
-              {capability.recommendedCameras && (
-                <div className="p-4 rounded-xl bg-[#090E11] border border-white/[0.08] mb-6">
-                  <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1.5">
-                    <Camera className="w-3.5 h-3.5" />
-                    <span>RECOMMENDED CAMERA SPECIFICATIONS</span>
-                  </div>
-                  <p className="text-xs text-[#8B9C9B] font-mono">
-                    {capability.recommendedCameras}
-                  </p>
                 </div>
               )}
             </div>

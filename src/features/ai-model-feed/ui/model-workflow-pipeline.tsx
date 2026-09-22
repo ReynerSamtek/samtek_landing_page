@@ -71,7 +71,7 @@ export function ModelWorkflowPipeline({ capability }: ModelWorkflowPipelineProps
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-[#8B9C9B] mb-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>REAL-TIME PIPELINE ARCHITECTURE</span>
+            <span>PIPELINE</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             How {capability.name} Processes Data on the Edge
