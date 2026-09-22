@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { aiCapabilities } from "@/entities/capability/model/data";
 import { CapabilityCard } from "@/entities/capability/ui/capability-card";
 import { SectionHeader } from "@/shared/ui/section-header";
 import { CapabilityCategory } from "@/entities/capability/model/types";
-import { ShieldCheck, HardHat, Store, Car, Layers, ChevronDown, ChevronUp } from "lucide-react";
+import { ShieldCheck, HardHat, Store, Car, Layers, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 
 export function CapabilitiesSection() {
   const [activeCategory, setActiveCategory] = useState<CapabilityCategory | "all">("all");
   const [showAll, setShowAll] = useState(false);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const categories = [
     { key: "all", label: "All Modules (24)", icon: Layers },
@@ -18,6 +20,25 @@ export function CapabilitiesSection() {
     { key: "business", label: "Retail & Commercial", icon: Store },
     { key: "traffic", label: "Traffic & Parking", icon: Car },
   ] as const;
+
+  const checkScroll = () => {
+    if (tabsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
+
+  const handleScrollRight = () => {
+    if (tabsRef.current) {
+      tabsRef.current.scrollBy({ left: 160, behavior: "smooth" });
+    }
+  };
 
   const filteredByCategory = activeCategory === "all"
     ? aiCapabilities
@@ -40,32 +61,50 @@ export function CapabilitiesSection() {
           />
         </div>
 
-        {/* Filter Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          {categories.map((tab) => {
-            const Icon = tab.icon;
-            const isActive = activeCategory === tab.key;
-            return (
-              <button
-                key={tab.key}
-                onClick={() => {
-                  setActiveCategory(tab.key);
-                  // If switching away from all, show all in that category
-                  if (tab.key !== "all") {
-                    setShowAll(true);
-                  }
-                }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer border ${
-                  isActive
-                    ? "bg-[#B62C2C] text-white border-white/15 shadow-sm"
-                    : "bg-[#12191D] text-[#C2D1D0] border-white/10 hover:border-white/20 hover:bg-[#1A2429] hover:text-white"
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                <span>{tab.label}</span>
-              </button>
-            );
-          })}
+        {/* Filter Category Tabs with Mobile Scroll Arrow */}
+        <div className="relative mb-8">
+          <div
+            ref={tabsRef}
+            onScroll={checkScroll}
+            className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none pr-10 sm:pr-0"
+          >
+            {categories.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeCategory === tab.key;
+              return (
+                <button
+                  key={tab.key}
+                  onClick={() => {
+                    setActiveCategory(tab.key);
+                    if (tab.key !== "all") {
+                      setShowAll(true);
+                    }
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap cursor-pointer border ${
+                    isActive
+                      ? "bg-[#B62C2C] text-white border-white/15 shadow-sm"
+                      : "bg-[#12191D] text-[#C2D1D0] border-white/10 hover:border-white/20 hover:bg-[#1A2429] hover:text-white"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right swipe indicator arrow for mobile */}
+          {canScrollRight && (
+            <button
+              onClick={handleScrollRight}
+              aria-label="Scroll right to see more categories"
+              className="sm:hidden absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#06090A] via-[#06090A]/90 to-transparent flex items-center justify-end pr-0.5 z-10 cursor-pointer"
+            >
+              <div className="w-7 h-7 rounded-full bg-[#12191D] border border-white/20 flex items-center justify-center text-white shadow-lg animate-pulse">
+                <ChevronRight className="w-4 h-4" />
+              </div>
+            </button>
+          )}
         </div>
 
         {/* Capabilities Grid */}

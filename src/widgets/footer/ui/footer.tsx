@@ -177,10 +177,6 @@ export function Footer() {
               icon="file"
             />
           </div>
-          <div className="flex items-center gap-2 text-emerald-400 text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>On-Premise Infrastructure Systems Operational</span>
-          </div>
         </div>
       </div>
     </footer>
