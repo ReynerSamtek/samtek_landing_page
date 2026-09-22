@@ -11,9 +11,9 @@ export function ComparisonSection() {
     >
       <div className="max-w-5xl mx-auto">
         <SectionHeader
-          badge="Perbandingan Arsitektur"
-          title="Mengapa Perusahaan Memilih Edge On-Premise Dibanding Cloud?"
-          description="Sistem VMS berbasis cloud membebani bandwidth kantor dan berisiko kebocoran data. Samtek memberikan performa analitik instan dengan kontrol total di tangan Anda."
+          badge="Architecture Comparison"
+          title="Why Enterprises Choose On-Premise Edge Over Cloud VMS"
+          description="Cloud-dependent surveillance systems congest internet bandwidth and introduce data leakage liabilities. SAMTEK delivers real-time computer vision with total sovereign control."
         />
 
         <ComparisonTable rows={comparisonRows} />

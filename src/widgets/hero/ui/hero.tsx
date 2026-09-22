@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/shared/config/site";
-import { Badge } from "@/shared/ui/badge";
 import { Button } from "@/shared/ui/button";
+import { Badge } from "@/shared/ui/badge";
 import { GlobeLive } from "@/shared/ui/globe";
 import {
+  ArrowRight,
+  CheckCircle2,
   Play,
   Video,
   LayoutDashboard,
-  CheckCircle2,
-  ArrowRight,
 } from "lucide-react";
 
 export function Hero() {
@@ -19,34 +19,34 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#06090A] pt-12 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-8 border-b border-white/[0.08]">
       {/* Subtle ambient light */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#B62C2C]/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#B62C2C]/5 blur-[120px] pointer-events-none rounded-full z-0" />
 
-      {/* Background 3D Rotating Globe Animation on Left Side (Enlarged, half visible, 30deg rotated) */}
-      <div className="absolute left-0 -translate-x-1/2 top-[-60px] sm:top-[-100px] lg:top-[-140px] w-[800px] sm:w-[1050px] lg:w-[1250px] aspect-square pointer-events-none opacity-90 select-none z-0 rotate-[-30deg]">
+      {/* Background 3D Rotating Globe Animation on Left Side */}
+      <div className="absolute left-0 -translate-x-1/2 top-[-60px] sm:top-[-100px] lg:top-[-140px] w-[800px] sm:w-[1050px] lg:w-[1250px] aspect-square pointer-events-none opacity-90 select-none z-10 rotate-[-30deg]">
         <GlobeLive className="w-full h-full" speed={0.002} />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-30">
         {/* Main Hero Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 mb-5">
             <Badge variant="muted" className="flex-1 px-3 py-2 text-xs">
               <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-[#8B9C9B]" />
-              Solusi Edge AI Vision On-Premise Indonesia
+              Enterprise On-Premise Edge AI Vision Solution
             </Badge>
           </div>
 
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-5 text-balance">
-            Ubah CCTV Biasa Menjadi{" "}
+            Turn Existing CCTV into an{" "}
             <span className="text-[#B62C2C]">
-              Sistem AI Vision Cerdas
+              Intelligent AI Vision System
             </span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-[#8B9C9B] leading-relaxed max-w-2xl mx-auto mb-8 text-balance">
-            Tanpa perlu mengganti kamera yang sudah terpasang. Pemrosesan video
-            100% on-premise di server lokal Anda — bebas biaya langganan cloud,
-            tanpa latensi internet, dan data rahasia tidak pernah bocor ke luar.
+            No need to replace your installed cameras. 100% on-premise video
+            processing on your local edge server — zero recurring cloud fees,
+            sub-second neural latency, and zero risk of confidential footage leaving your building.
           </p>
 
           {/* Action CTAs */}
@@ -58,7 +58,7 @@ export function Hero() {
               className="w-full sm:w-auto font-medium"
             >
               <a href="#demo" className="flex items-center justify-center gap-2">
-                <span>Jadwalkan Live Demo</span>
+                <span>Schedule Live Demo</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </Button>
@@ -70,7 +70,7 @@ export function Hero() {
             >
               <a href="#fitur" className="flex items-center justify-center gap-2">
                 <Video className="w-4 h-4 text-[#8B9C9B]" />
-                <span>Pelajari 24+ Modul AI</span>
+                <span>Explore 24+ AI Modules</span>
               </a>
             </Button>
           </div>
@@ -79,15 +79,15 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-[#C2D1D0]">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#B62C2C]" />
-              Kompatibel Semua Brand CCTV
+              Compatible with Any CCTV Brand
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#0C6791]" />
-              Zero Cloud Bandwidth Cost
+              Zero Cloud Bandwidth Overhead
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              Deteksi Cepat &lt; 10ms
+              Sub-10ms Real-Time Inference
             </span>
           </div>
         </div>
@@ -132,7 +132,7 @@ export function Hero() {
                 }`}
               >
                 <Video className="w-3.5 h-3.5 text-[#B62C2C]" />
-                <span>Live VMS & Deteksi AI</span>
+                <span>Live VMS & AI Vision</span>
               </button>
               <button
                 type="button"
@@ -204,21 +204,21 @@ export function Hero() {
             <div className="flex items-center gap-2">
               <span className="font-semibold text-white">
                 {activeConsoleTab === "video"
-                  ? "Video Demo Langsung:"
+                  ? "Live Demonstration:"
                   : activeConsoleTab === "demo"
-                  ? "Tampilan Antarmuka VMS:"
-                  : "Tampilan Dashboard Analitik:"}
+                  ? "VMS Operator Interface:"
+                  : "Analytics Dashboard:"}
               </span>
               <span>
                 {activeConsoleTab === "video"
-                  ? "Rekaman uji coba langsung analitik AI SAMTEK dalam mendeteksi objek dan aktivitas secara real-time."
+                  ? "Real-world footage demonstrating SAMTEK's high-speed computer vision detection across diverse environments."
                   : activeConsoleTab === "demo"
-                  ? "Streaming multi-channel CCTV dengan inferensi AI Edge & pelacakan objek lokal secara real-time."
-                  : "Rekapitulasi kepatuhan APD/K3, tren insiden harian/mingguan, dan visualisasi summary deteksi."}
+                  ? "Multi-channel CCTV streaming with on-device edge AI inference & local real-time object tracking."
+                  : "PPE/safety compliance recaps, historical incident trends, and real-time operational KPI summaries."}
               </span>
             </div>
             <div className="text-[11px] font-mono text-[#C2D1D0] shrink-0">
-              100% On-Premise · Air-Gapped
+              100% On-Premise · Air-Gapped Ready
             </div>
           </div>
         </div>

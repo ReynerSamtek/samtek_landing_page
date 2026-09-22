@@ -15,22 +15,22 @@ export function SecuritySection() {
           <div>
             <Badge variant="blue" pulse className="mb-4">
               <Shield className="w-3.5 h-3.5 mr-1" />
-              Keamanan Data & Regulasi
+              Data Security & Compliance
             </Badge>
 
             <SectionHeader
-              title="Kedaulatan Data Penuh di Tangan Perusahaan Anda"
-              description="Untuk institusi perbankan, manufaktur vital, BUMN, dan instalasi militer di mana kebocoran rekaman video ke server cloud adalah pelanggaran hukum berat."
+              title="Full Data Sovereignty in Your Enterprise Hands"
+              description="Designed specifically for critical banking, industrial manufacturing, defense, and state enterprises where leaking video footage to cloud vendors is a strict regulatory violation."
               className="mb-6"
             />
 
             <div className="p-5 rounded-xl bg-[#0E1519] border border-white/10 text-xs text-[#C2D1D0] space-y-2">
               <div className="flex items-center gap-2 font-semibold text-white">
                 <Lock className="w-4 h-4 text-[#8B9C9B]" />
-                <span>Prinsip Zero-Trust Architecture</span>
+                <span>Zero-Trust Architecture Principles</span>
               </div>
               <p className="leading-relaxed text-[#8B9C9B]">
-                Samtek tidak mewajibkan port forwarding, tidak membutuhkan akses publik internet, dan dapat beroperasi penuh pada jaringan lokal tertutup (air-gapped intranet).
+                SAMTEK does not require port forwarding, never opens inbound public internet ports, and operates flawlessly within fully air-gapped corporate intranets.
               </p>
             </div>
           </div>

@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2.5 shrink-0 select-none group"
         >
           <Image
@@ -56,8 +56,8 @@ export function Navbar() {
           </a>
 
           <Button asChild variant="primary" size="md" className="font-medium">
-            <a href="#demo" className="flex items-center gap-1.5 whitespace-nowrap">
-              <span>Jadwalkan Demo</span>
+            <a href="/#demo" className="flex items-center gap-1.5 whitespace-nowrap">
+              <span>Schedule Demo</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </Button>
@@ -67,7 +67,7 @@ export function Navbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden p-2 rounded-lg text-[#8B9C9B] hover:text-white bg-white/[0.03] border border-white/10 transition-colors"
-          aria-label="Buka menu navigasi"
+          aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -99,8 +99,8 @@ export function Navbar() {
             </a>
 
             <Button asChild variant="primary" size="md" className="w-full">
-              <a href="#demo" onClick={() => setMobileMenuOpen(false)}>
-                Jadwalkan Live Demo
+              <a href="/#demo" onClick={() => setMobileMenuOpen(false)}>
+                Schedule Live Demo
               </a>
             </Button>
           </div>

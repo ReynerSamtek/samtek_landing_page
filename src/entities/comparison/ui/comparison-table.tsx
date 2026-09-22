@@ -12,14 +12,14 @@ export function ComparisonTable({ rows }: ComparisonTableProps) {
       {/* Table Header */}
       <div className="grid grid-cols-[1.1fr_1.4fr_1.2fr] bg-[#11181C] border-b border-white/[0.08] text-xs font-semibold">
         <div className="p-4 sm:p-5 text-[#8B9C9B] uppercase tracking-wider">
-          Faktor Kritis
+          Evaluation Factor
         </div>
         <div className="p-4 sm:p-5 text-white bg-[#141C21] border-x border-white/10 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#B62C2C]" />
           <span>SAMTEK (Edge On-Premise)</span>
         </div>
         <div className="p-4 sm:p-5 text-[#8B9C9B]">
-          Solusi Cloud VMS Biasa
+          Standard Cloud VMS Solutions
         </div>
       </div>
 
