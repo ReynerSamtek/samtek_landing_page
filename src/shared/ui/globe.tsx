@@ -16,11 +16,11 @@ interface GlobeLiveProps {
 }
 
 export const defaultMarkers: LiveMarker[] = [
-  { id: "jkt", name: "Jakarta", location: [-6.2088, 106.8456] },
-  { id: "pwk", name: "Purwakarta", location: [-6.5569, 107.4433] },
-  { id: "bdg", name: "Bandung", location: [-6.9175, 107.6191] },
   { id: "mdn", name: "Medan", location: [3.5952, 98.6722] },
   { id: "sby", name: "Surabaya", location: [-7.2575, 112.7521] },
+  { id: "bdg", name: "Bandung", location: [-6.9175, 107.6191] },
+  { id: "pwk", name: "Purwakarta", location: [-6.5569, 107.4433] },
+  { id: "jkt", name: "Jakarta", location: [-6.2088, 106.8456] },
 ]
 
 export function GlobeLive({

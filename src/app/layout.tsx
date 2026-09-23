@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-// @ts-expect-error Next.js processes global CSS imports at build time.
 import "./globals.css";
 import { siteConfig } from "@/shared/config/site";
+import { CursorGlow } from "@/shared/ui/cursor-glow";
+import { LoadingOverlay } from "@/shared/ui/loading-overlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,17 +19,18 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SAMTEK VMS — Landing Page",
+  title: "SAMTEK — AI Video Management System (On-Premise Edge AI)",
   description:
-    "Ubah CCTV yang sudah ada menjadi sistem AI cerdas. Pemrosesan video 100% on-premise tanpa biaya cloud bulanan dan tanpa risiko kebocoran data.",
+    "Transform your existing CCTV into an intelligent AI surveillance system. 100% on-premise edge video analytics with zero recurring cloud fees and zero risk of data exposure.",
   keywords: [
-    "Samtek VMS",
-    "Video Management System Indonesia",
-    "AI CCTV On-Premise",
-    "Smart Surveillance",
-    "Face Recognition CCTV",
+    "SAMTEK VMS",
+    "On-Premise Video Management System",
+    "Edge AI CCTV",
+    "Smart Surveillance System",
+    "Face Recognition Access Control",
     "PPE Detection K3",
-    "Edge AI Vision",
+    "ANPR License Plate Recognition",
+    "Zero Cloud Bandwidth CCTV",
   ],
   authors: [{ name: siteConfig.company.name }],
   creator: siteConfig.company.name,
@@ -52,8 +54,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans bg-[#06090A] text-[#E6F1F0] antialiased selection:bg-[#B62C2C]/30 selection:text-white">
+    <html
+      lang="en"
+      className={`dark ${inter.variable} ${jetbrainsMono.variable}`}
+      style={{ backgroundColor: "#06090A", color: "#E6F1F0" }}
+    >
+      <head>
+        {/* Critical inline CSS preventing Flash of Unstyled Content (FOUC) and white flash */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html, body {
+                background-color: #06090A !important;
+                color: #E6F1F0 !important;
+                margin: 0;
+                padding: 0;
+              }
+              a {
+                color: inherit;
+                text-decoration: none;
+              }
+              header {
+                background-color: rgba(6, 9, 10, 0.95);
+              }
+            `,
+          }}
+        />
+      </head>
+      <body className="font-sans bg-[#06090A] text-[#E6F1F0] antialiased selection:bg-[#B62C2C]/30 selection:text-white relative">
+        <LoadingOverlay />
+        <CursorGlow />
         {children}
       </body>
     </html>

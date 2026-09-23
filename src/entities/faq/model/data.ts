@@ -3,38 +3,38 @@ import { FaqItem } from "./types";
 export const faqData: FaqItem[] = [
   {
     id: "faq-01",
-    question: "Apakah sistem SAMTEK membutuhkan koneksi internet agar bisa bekerja?",
+    question: "Does the SAMTEK system require an internet connection to function?",
     answer:
-      "Sama sekali tidak. Semua pemrosesan AI (pengenalan wajah, plat nomor, APD, anomali) dan penyimpanan video berjalan 100% lokal di server gedung Anda. Saat internet mati, pengawasan tetap berjalan normal tanpa gangguan. Internet hanya opsional jika Anda ingin menerima notifikasi darurat ke ponsel di luar kantor.",
+      "Not at all. All computer vision inference (facial recognition, license plates, PPE safety compliance, anomaly detection) and local storage operate 100% locally on your facility edge server. Even during internet outages, surveillance continues without disruption. An internet connection is strictly optional if you wish to receive push notifications on mobile devices outside the building.",
   },
   {
     id: "faq-02",
-    question: "Apakah kami harus mengganti kamera CCTV yang sudah terpasang?",
+    question: "Do we need to replace our currently installed CCTV cameras?",
     answer:
-      "Tidak perlu mengganti kamera. SAMTEK langsung kompatibel dengan CCTV yang sudah Anda miliki dari brand apapun (Hikvision, Dahua, Axis, Uniview, Bosch, dll) selama mendukung standar RTSP atau ONVIF. Hal ini menghemat biaya investasi ratusan juta rupiah.",
+      "No camera replacements are required. SAMTEK seamlessly integrates with any camera brand you already own (Hikvision, Dahua, Axis, Uniview, Bosch, etc.) as long as it supports industry-standard RTSP or ONVIF protocols, saving substantial capital expenditure.",
   },
   {
     id: "faq-03",
-    question: "Berapa banyak modul AI yang bisa dijalankan secara bersamaan?",
+    question: "How many AI models can run concurrently on a single stream?",
     answer:
-      "Tergantung pada kapasitas prosesor/NPU edge server yang dipasang. Anda bebas memilih modul berbeda untuk tiap kamera sesuai kebutuhan lokasi — contohnya kamera gerbang menjalankan deteksi plat nomor & wajah, sedangkan kamera pabrik menjalankan deteksi helm APD & kepulan asap.",
+      "It depends on the hardware capacity of the installed edge server. You have complete flexibility to assign different models per stream according to location needs — for example, entrance cameras can run license plate & face recognition, while factory floor cameras run PPE hardhat & fire detection.",
   },
   {
     id: "faq-04",
-    question: "Bagaimana skema biaya dan model lisensi SAMTEK?",
+    question: "How does SAMTEK's licensing and cost model work?",
     answer:
-      "Skema lisensi SAMTEK sangat transparan dan hemat OPEX: lisensi dihitung per kamera dan modul yang Anda aktifkan, tanpa biaya langganan bulanan cloud yang memberatkan dan tanpa biaya konsumsi bandwidth.",
+      "SAMTEK's pricing model is completely transparent and OPEX-optimized: licensing is calculated per camera channel and activated module, free of recurring cloud fees and bandwidth surcharges.",
   },
   {
     id: "faq-05",
-    question: "Apakah data rekaman kami aman dari kebocoran ke pihak luar?",
+    question: "Is our video footage protected against third-party leaks?",
     answer:
-      "Sangat aman. Data rekaman tidak pernah diunggah ke cloud publik pihak ketiga manapun. Sistem dilengkapi enkripsi AES-256, hak akses bertingkat (RBAC), serta audit log forensik digital yang mencatat setiap aksi operator.",
+      "Yes, completely. Video data is never uploaded to any public multi-tenant cloud. The platform features AES-256 encryption, strict Role-Based Access Control (RBAC), and immutable digital forensic audit logs recording all operator activities.",
   },
   {
     id: "faq-06",
-    question: "Apakah tersedia bantuan instalasi dan pelatihan untuk staf kami?",
+    question: "Do you provide on-site installation support and operator training?",
     answer:
-      "Ya, tim teknisi PT Safanah Alvan Maksima siap mendampingi mulai dari assessment jaringan CCTV eksisting, instalasi perangkat edge, konfigurasi aturan AI, hingga pelatihan langsung bagi operator keamanan dan tim IT Anda.",
+      "Yes. PT Safanah Alvan Maksima's technical team provides comprehensive deployment services: from assessing your current CCTV network, deploying edge server hardware, and tuning AI detection rules to hands-on training for your security operators and IT team.",
   },
 ];

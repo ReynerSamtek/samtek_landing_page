@@ -1,6 +1,7 @@
 import React from "react";
 import { howItWorksSteps } from "@/entities/how-it-works/model/data";
 import { StepCard } from "@/entities/how-it-works/ui/step-card";
+import { PipelineAnimation } from "@/entities/how-it-works/ui/pipeline-animation";
 import { SectionHeader } from "@/shared/ui/section-header";
 
 export function HowItWorksSection() {
@@ -11,10 +12,13 @@ export function HowItWorksSection() {
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          badge="Alur Implementasi Cepat"
-          title="Bagaimana Samtek Bekerja di Infrastruktur Anda"
-          description="Pemasangan plug-and-play hanya dalam hitungan jam. Tanpa merombak kabel eksisting dan tanpa downtime pada operasional gedung."
+          badge="Rapid Deployment Pipeline"
+          title="How SAMTEK Integrates with Your Infrastructure"
+          description="Plug-and-play setup within hours. No re-cabling required and zero downtime for your ongoing facility operations."
         />
+
+        {/* Animated Data Pipeline Flow */}
+        <PipelineAnimation />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {howItWorksSteps.map((step) => (

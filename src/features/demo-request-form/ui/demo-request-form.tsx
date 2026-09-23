@@ -41,12 +41,12 @@ export function DemoRequestForm() {
       const result = await res.json();
 
       if (!res.ok) {
-        throw new Error(result.error || "Gagal mengirim formulir");
+        throw new Error(result.error || "Failed to submit form");
       }
 
       setSubmitted(true);
     } catch (err: any) {
-      setErrorMessage(err.message || "Terjadi kesalahan saat mengirim formulir.");
+      setErrorMessage(err.message || "An error occurred while submitting your request.");
     } finally {
       setIsSubmitting(false);
     }
@@ -72,15 +72,15 @@ export function DemoRequestForm() {
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="text-xs font-medium px-3 py-1 rounded-full bg-[#121E1A] text-emerald-400 border border-white/10">
-          Permintaan Demo Berhasil Dikirim
+          Demo Request Successfully Sent
         </div>
         <h3 className="text-2xl font-bold text-white">
-          Terima kasih, {formData.name || "Bapak/Ibu"}!
+          Thank you, {formData.name || "Valued Partner"}!
         </h3>
         <p className="text-sm text-[#8B9C9B] max-w-md leading-relaxed">
-          Tim technical engineer <strong className="text-white">PT Safanah Alvan Maksima</strong> akan menghubungi Anda melalui nomor WhatsApp (
+          Our technical engineering team from <strong className="text-white">PT Safanah Alvan Maksima</strong> will contact you via WhatsApp or email (
           <span className="text-white font-mono">{formData.phone || formData.email}</span>
-          ) dalam waktu 1x24 jam untuk menjadwalkan live assessment on-site.
+          ) within 24 hours to coordinate your live on-site assessment.
         </p>
 
         <div className="mt-4 pt-6 border-t border-white/[0.08] w-full flex justify-center">
@@ -92,7 +92,7 @@ export function DemoRequestForm() {
             className="flex items-center gap-2 text-xs"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            Kirim Permintaan Lain
+            Submit Another Request
           </Button>
         </div>
       </div>
@@ -103,10 +103,10 @@ export function DemoRequestForm() {
     <div className="p-6 sm:p-8 rounded-2xl bg-[#0D1316] border border-white/[0.08] shadow-2xl">
       <div className="mb-6">
         <h3 className="text-xl font-bold text-white mb-1">
-          Formulir Pengajuan Demo & POC
+          Request Live Demo & PoC
         </h3>
         <p className="text-xs sm:text-sm text-[#8B9C9B]">
-          Uji coba langsung kemampuan AI di kamera CCTV Anda tanpa komitmen.
+          Evaluate our edge AI capabilities on your cameras with zero commitment.
         </p>
       </div>
 
@@ -114,13 +114,13 @@ export function DemoRequestForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-              Nama Lengkap <span className="text-[#B62C2C]">*</span>
+              Full Name <span className="text-[#B62C2C]">*</span>
             </label>
             <input
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Contoh: Bpk. Bambang Sutrisno"
+              placeholder="e.g. John Doe"
               required
               className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
@@ -128,13 +128,13 @@ export function DemoRequestForm() {
 
           <div>
             <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-              Perusahaan / Instansi <span className="text-[#B62C2C]">*</span>
+              Company / Organization <span className="text-[#B62C2C]">*</span>
             </label>
             <input
               name="company"
               value={formData.company}
               onChange={handleChange}
-              placeholder="Contoh: PT Industri Maju Abadi"
+              placeholder="e.g. Acme Industrial Corp"
               required
               className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
@@ -144,14 +144,14 @@ export function DemoRequestForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-              Email Kantor (Work Email) <span className="text-[#B62C2C]">*</span>
+              Corporate Email <span className="text-[#B62C2C]">*</span>
             </label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="nama@perusahaan.com"
+              placeholder="name@company.com"
               required
               className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
@@ -159,14 +159,14 @@ export function DemoRequestForm() {
 
           <div>
             <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-              Nomor WhatsApp / HP Aktif <span className="text-[#B62C2C]">*</span>
+              WhatsApp / Mobile Number <span className="text-[#B62C2C]">*</span>
             </label>
             <input
               type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="081234567890"
+              placeholder="+62 812 3456 7890"
               required
               className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors"
             />
@@ -175,7 +175,7 @@ export function DemoRequestForm() {
 
         <div>
           <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-            Estimasi Jumlah Titik Kamera yang Ingin Dianalisis
+            Estimated Camera Channels for Analysis
           </label>
           <select
             name="cameraCount"
@@ -183,22 +183,22 @@ export function DemoRequestForm() {
             onChange={handleChange}
             className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white focus:outline-none transition-colors"
           >
-            <option value="<10">1 – 10 Titik Kamera (Skala Kecil / Ritel)</option>
-            <option value="10-30">10 – 30 Titik Kamera (Gedung Kantor / Gudang)</option>
-            <option value="30-100">30 – 100 Titik Kamera (Pabrik / Kawasan)</option>
-            <option value=">100">&gt; 100 Titik Kamera (Smart City / Multi-Site)</option>
+            <option value="1-8">1 – 8 Camera Channels (Small Site / Pilot)</option>
+            <option value="10-30">10 – 30 Camera Channels (Standard Building)</option>
+            <option value="30-100">30 – 100 Camera Channels (Industrial Plant / Campus)</option>
+            <option value=">100">&gt; 100 Camera Channels (Smart City / Multi-Site)</option>
           </select>
         </div>
 
         <div>
           <label className="block text-xs font-medium text-[#C2D1D0] mb-1.5">
-            Kebutuhan Spesifik / Masalah yang Ingin Diselesaikan
+            Specific Requirements / Problems to Solve
           </label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Misal: Ingin deteksi helm K3 dan orang tidak berwenang di area gudang bahan peledak..."
+            placeholder="e.g. Looking to detect PPE hardhat compliance and unauthorized entry around hazardous chemical storage..."
             rows={3}
             className="w-full bg-[#06090A] border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 rounded-lg px-3.5 py-2.5 text-white placeholder:text-[#8B9C9B]/50 focus:outline-none transition-colors resize-y"
           />
@@ -219,17 +219,17 @@ export function DemoRequestForm() {
           className="w-full font-semibold mt-2"
         >
           {isSubmitting ? (
-            <span>Mengirim Data...</span>
+            <span>Submitting Request...</span>
           ) : (
             <span className="flex items-center gap-2">
               <Send className="w-4 h-4" />
-              Kirim Pengajuan Live Demo Sekarang
+              Submit Live Demo Application
             </span>
           )}
         </Button>
 
         <p className="text-[11px] text-[#8B9C9B] text-center mt-3">
-          🔒 Data Anda terlindungi dan hanya digunakan untuk keperluan koordinasi demo teknis.
+          🔒 Your information is confidential and used solely for technical demo scheduling.
         </p>
       </form>
     </div>

@@ -11,9 +11,9 @@ export function SectorsSection() {
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
-          badge="Solusi Spesifik Industri"
-          title="Dirancang untuk Menjawab Tantangan Riil di Lapangan"
-          description="Setiap vertikal industri memiliki kebutuhan pengawasan yang unik. Samtek menghadirkan paket analitik yang siap diintegrasikan dengan SOP operasional Anda."
+          badge="Industry-Tailored Solutions"
+          title="Engineered to Solve Real-World Operational Challenges"
+          description="Every vertical operates under distinct requirements. SAMTEK delivers domain-specific computer vision models ready to integrate directly with your operational SOPs."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
