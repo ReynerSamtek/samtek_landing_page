@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-// @ts-expect-error Next.js processes global CSS imports at build time.
 import "./globals.css";
 import { siteConfig } from "@/shared/config/site";
 import { CursorGlow } from "@/shared/ui/cursor-glow";
